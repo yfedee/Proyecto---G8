@@ -147,15 +147,15 @@ async function enviarFormularioContacto() {
     // Lógica para enviar el formulario
 
     // Muestra la ventana emergente con los datos del usuario
-    let confirmacionUsuario = mostrarConfirmacion();
+    let confirmacionUsuario = await mostrarConfirmacion();
 
     if (confirmacionUsuario) {
-        // Solicitud AJAX con un retardo de 2 segundos
-        setTimeout(() => {
-            document.getElementById('contacto').style.display = 'none';
-            alert("¡Formulario enviado con éxito! Pronto recibirás una respuesta.");
-            window.location.reload();
-        }, 1500);
+        // Si el usuario elige modificar, muestra solo el paso 1
+        document.getElementById('paso1').style.display = 'block';
+        for (let i = 2; i <= totalSteps; i++) {
+            document.getElementById('paso' + i).style.display = 'none';
+        }
+        currentStep = 1;
     } else {
         // Solicitud AJAX con un retardo de 2 segundos
         setTimeout(() => {
@@ -164,10 +164,9 @@ async function enviarFormularioContacto() {
             alert("¡Formulario enviado con éxito! Pronto recibirás una respuesta.");
             // Recarga la página después de la alerta
             window.location.reload();
-        }, 1000);
+        }, 1500);
     }
 }
-
 
 // Función para mostrar una confirmación personalizada en la ventana emergente
 function mostrarConfirmacion() {
