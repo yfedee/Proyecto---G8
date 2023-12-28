@@ -1,0 +1,364 @@
+html, body {
+    height: 100%;
+}
+
+/*Logo alineado a la izquierda, tamaño 300px */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 230px;
+    height: auto;
+}
+
+/* Título y subtítulo centrados, en la misma línea que el logo */
+header {
+    background-color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    padding: 0 20px;
+}
+
+
+.header_titulo{
+    
+    text-align:center;
+    font-size: 45px;
+    padding: 35px ;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+    
+}
+.header_sub{
+    display: block;
+    font-weight: 400;
+    font-size: 20px;
+    text-align:center;
+    margin-top: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* Navegación centrada */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+    font-family: 'Roboto', sans-serif; 
+}
+
+nav a:hover {
+    color: #333;
+}
+
+/* Contenido centrado con margen izquierdo para agregar foto */
+main {
+    text-align: center;
+    padding: 0 20px;
+    flex: 1;
+}
+
+.descripcion-inicio {
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: center;
+    text-align: justify;
+}
+
+/* Imágenes ordenadas en columnas con recuadro blanco y animación al pasar el mouse - productos */
+.trabajo {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.trabajo:hover {
+    transform: scale(1.05);
+}
+
+.trabajo img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.galeria-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+
+/* Imágenes ordenadas en columnas con recuadro blanco y animación al pasar el mouse - servicios */
+.servicio {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.servicio:hover {
+    transform: scale(1.05);
+}
+
+.servicio img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.servicio-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/*Diseño formulario */
+#contacto {
+    height: 100%;
+    place-items: center;
+    place-content: center;
+}
+
+#contacto .formulario-proceso {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contacto .formulario-proceso h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#contacto .formulario-proceso .contenido-container {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+}
+
+#contacto .formulario-proceso p {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: justify;
+    flex: 0.5;
+    margin-right: 10px;
+}
+
+#contacto button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+#contacto .paso {
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    place-items: center;
+}
+
+/* Diseño footer*/
+footer {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    padding: 10px 0;
+}
+
+.logo-red-social {
+    width: 40px;
+    height: auto;
+}
+
+footer ul {
+    list-style: none;
+}
+
+body {
+    background-color: #39635b7e;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Diseño para el modal */
+.imagen-completa {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.571);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagen-completa img {
+    max-width: 80%;
+    max-height: 80%;
+} 
+
+.imagen-completa .info-container {
+    background-color: white;
+    padding: 10px;
+    max-height: 90vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.imagen-completa .info-container img {
+    height: 80%;
+}
+
+.descripcion-imagen {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 0 0 8px 8px;
+    text-align: center;
+}
+
+.descripcion-imagen h2,
+.descripcion-imagen p {
+    margin: 0;
+}
+
+.cerrar-imagen {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #000000;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flecha-izquierda,
+.flecha-derecha {
+    font-size: 20px;
+    color: #000000;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #ffffff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flecha-izquierda {
+    left: 10px;
+}
+
+.flecha-derecha {
+    right: 10px;
+}
+
+/* Carrusel y texto inicio */
+.carousel-inner {
+    border-radius: 8px;
+    overflow: hidden;
+    max-height: 500px;
+    margin: 0 auto;
+}
+
+.carousel-item {
+    position: relative;
+}
+
+.carousel-item img {
+    height: 50%;
+    width: 50%;
+    max-height: 550px;
+    object-fit: cover;
+    margin: 0 auto;
+}
+
+
+.texto-superpuesto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #ffffff;
+    padding: 35px;
+    font-family: "Rufina", Sans-serif;
+    transition: opacity 0.5s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.texto-superpuesto h2,
+.texto-superpuesto p {
+    display: inline;
+}
+
+
+.texto-superpuesto .titulo-superpuesto,
+.texto-superpuesto .descripcion-superpuesta {
+    font-family: "Tajawal", Sans-serif;
+}
+
+.texto-superpuesto .titulo-superpuesto {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.texto-superpuesto .descripcion-superpuesta {
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.texto-superpuesto .separador {
+    height: 1px;
+    width: 80%;
+    background-color: white;
+    margin: 10px auto;
+}
+
