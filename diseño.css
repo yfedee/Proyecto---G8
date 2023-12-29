@@ -20,7 +20,6 @@ header {
     padding: 0 20px;
 }
 
-
 .header_titulo{
     
     text-align:center;
@@ -28,8 +27,8 @@ header {
     padding: 35px ;
     font-weight: 700;
     font-family: 'Roboto', sans-serif;
-    
 }
+
 .header_sub{
     display: block;
     font-weight: 400;
@@ -38,7 +37,6 @@ header {
     margin-top: 5px;
     font-family: 'Roboto', sans-serif;
 }
-
 
 /* Navegación centrada */
 nav ul {
@@ -106,7 +104,6 @@ main {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
 }
-
 
 /* Imágenes ordenadas en columnas con recuadro blanco y animación al pasar el mouse - servicios */
 .servicio {
@@ -319,7 +316,6 @@ body {
     margin: 0 auto;
 }
 
-
 .texto-superpuesto {
     position: absolute;
     top: 50%;
@@ -338,7 +334,6 @@ body {
 .texto-superpuesto p {
     display: inline;
 }
-
 
 .texto-superpuesto .titulo-superpuesto,
 .texto-superpuesto .descripcion-superpuesta {
