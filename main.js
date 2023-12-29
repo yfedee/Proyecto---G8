@@ -90,11 +90,9 @@ document.addEventListener('DOMContentLoaded', function () {
         let flechaDerecha = document.createElement('span');
         flechaDerecha.className = 'flecha-derecha';
         flechaDerecha.innerHTML = '>';
-    
+
         contenedor.appendChild(flechaIzquierda);
         contenedor.appendChild(flechaDerecha);
-    
-       
     
         flechaIzquierda.addEventListener('click', function () {
             indexActual = (indexActual - 1 + productos.length) % productos.length;
@@ -110,12 +108,10 @@ document.addEventListener('DOMContentLoaded', function () {
             descripcionElement.textContent = productos[indexActual].querySelector('p').textContent;
         });
     }
-    
-
 
     // Variables globales para manejar los pasos del formulario
     let currentStep = 1;
-    let totalSteps = 7; // Ajustar según la cantidad de pasos en el formulario
+    let totalSteps = 7;
 
     // Función para mostrar el formulario paso a paso
     function mostrarFormularioPasoAPaso() {
@@ -144,25 +140,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Función para enviar el formulario
 async function enviarFormularioContacto() {
-    // Lógica para enviar el formulario
-
-    // Muestra la ventana emergente con los datos del usuario
     let confirmacionUsuario = await mostrarConfirmacion();
 
     if (confirmacionUsuario) {
-        // Si el usuario elige modificar, muestra solo el paso 1
         document.getElementById('paso1').style.display = 'block';
         for (let i = 2; i <= totalSteps; i++) {
             document.getElementById('paso' + i).style.display = 'none';
         }
         currentStep = 1;
     } else {
-        // Solicitud AJAX con un retardo de 2 segundos
         setTimeout(() => {
-            // Después de enviar el formulario, puedes ocultar la sección del formulario y mostrar un mensaje de éxito
             document.getElementById('contacto').style.display = 'none';
             alert("¡Formulario enviado con éxito! Pronto recibirás una respuesta.");
-            // Recarga la página después de la alerta
             window.location.reload();
         }, 1500);
     }
@@ -170,7 +159,6 @@ async function enviarFormularioContacto() {
 
 // Función para mostrar una confirmación personalizada en la ventana emergente
 function mostrarConfirmacion() {
-    // Obtener datos del formulario
     let nombre = document.getElementById('nombre').value;
     let email = document.getElementById('email').value;
     let telefono = document.getElementById('Telefono').value;
@@ -178,8 +166,6 @@ function mostrarConfirmacion() {
     let tipoEvento = document.getElementById('tipoEvento').value;
     let numInvitados = document.getElementById('numInvitados').value;
     let mensaje = document.getElementById('mensaje').value;
-
-    // Crear mensaje de confirmación con los datos del usuario
     let mensajeConfirmacion =
         `Nombre: ${nombre}\n` +
         `Email: ${email}\n` +
@@ -188,14 +174,10 @@ function mostrarConfirmacion() {
         `Tipo de Evento: ${tipoEvento}\n` +
         `Número de Invitados: ${numInvitados}\n` +
         `Mensaje: ${mensaje}\n`;
-
-    // Cuadro de diálogo asíncrono para mostrar la confirmación con los datos hasta el momento
     let respuesta = confirm(mensajeConfirmacion + "\n\nPor favor verifique que los datos sean correctos. ¿Enviar?");
-    
     return respuesta;
 }
 
-// Array con las palabras que cambiarán
     let palabrasCambiantes = ['diferentes', 'divertidas', 'relajadas', 'con onda'];
     let indexPalabra = 0;
 
@@ -205,8 +187,5 @@ function mostrarConfirmacion() {
         indexPalabra = (indexPalabra + 1) % palabrasCambiantes.length;
     }
 
-    // Llamada inicial para mostrar la primera palabra
     cambiarPalabra();
-
-    // Llama a la función cambiarPalabra cada 2 segundos
     setInterval(cambiarPalabra, 2500);
